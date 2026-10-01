@@ -1,0 +1,60 @@
+{
+  "name": "@kreflux/krextract",
+  "version": "0.1.0",
+  "description": "Kreflux Reasoning Extraction defense: an explicit public-output boundary for reasoning applications.",
+  "type": "module",
+  "license": "Apache-2.0",
+  "author": "Kreflux",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kreflux/Krextract.git"
+  },
+  "homepage": "https://freezesol.com/#krextract",
+  "bugs": {
+    "url": "https://github.com/Kreflux/Krextract/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@10.34.3",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "krextract": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "examples"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests scripts examples",
+    "test": "tsx --test tests/*.test.ts",
+    "build": "tsc",
+    "evaluate": "tsx scripts/evaluate.ts",
+    "prepare": "tsc",
+    "prepack": "tsc"
+  },
+  "keywords": [
+    "reasoning",
+    "security",
+    "chain-of-thought",
+    "prompt-injection",
+    "llm",
+    "guardrails"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@types/node": "^22.20.4",
+    "eslint": "^9.39.5",
+    "tsx": "^4.23.15",
+    "typescript": "5.9.3",
+    "typescript-eslint": "^8.71.0"
+  }
+}
